@@ -16,4 +16,8 @@ export const routes: Routes = [
     path: 'home',
     component: MainPageComponent,
   },
+  {
+    path: '**',
+    redirectTo: 'home',
+  },
 ];
