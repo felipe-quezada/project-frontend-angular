@@ -14,7 +14,7 @@ import 'chart.js/auto';
 export class ChartComponent implements DoCheck {
   @Input()
   public weatherList: DaysWeather[] = [];
-  public chart?: Chart<'bar', number[], string>;
+  public chart?: Chart<'line', number[], string>;
 
   get labels() {
     let _labels: string[] = [];
@@ -30,7 +30,7 @@ export class ChartComponent implements DoCheck {
 
   createChart() {
     this.chart = new Chart('myChart', {
-      type: 'bar',
+      type: 'line',
       data: {
         labels: this.labels,
         datasets: [
