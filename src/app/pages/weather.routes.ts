@@ -1,18 +1,19 @@
 import { Routes } from '@angular/router';
+import { MainPageComponent } from './main-page/main-page.component';
+import { TopWeatherPageComponent } from './top-weather-page/top-weather-page.component';
+import { LwxWeatherPageComponent } from './lwx-weather-page/lwx-weather-page.component';
 
 export const routes: Routes = [
   {
     path: 'LWX',
-    loadComponent: () =>
-      import('./lwx-weather-page/lwx-weather-page.component').then(
-        (c) => c.LwxWeatherPageComponent
-      ),
+    component: LwxWeatherPageComponent,
   },
   {
     path: 'TOP',
-    loadComponent: () =>
-      import('./top-weather-page/top-weather-page.component').then(
-        (c) => c.TopWeatherPageComponent
-      ),
+    component: TopWeatherPageComponent,
+  },
+  {
+    path: 'home',
+    component: MainPageComponent,
   },
 ];
